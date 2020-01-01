@@ -1,0 +1,37 @@
+PS F:\xamp\xampp\htdocs\applaravel>
+>> git init
+>> git add index.php
+>> git commit -m "first commit"
+>> git remote add origin https://github.com/hainguyenvan6799/testGit.git
+>> git push -u origin master
+>>                                                                                                                      Reinitialized existing Git repository in F:/xamp/xampp/htdocs/applaravel/.git/
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'hai@DESKTOP-KNN0FKF.(none)')
+fatal: remote origin already exists.
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/hainguyenvan6799/testGit.git'
+PS F:\xamp\xampp\htdocs\applaravel> git config --global user.email "qakhudaubuon12@gmail.com"                           PS F:\xamp\xampp\htdocs\applaravel> git config --global user.email "hainguyenvan6799"                                   PS F:\xamp\xampp\htdocs\applaravel> git init                                                                            Reinitialized existing Git repository in F:/xamp/xampp/htdocs/applaravel/.git/
+PS F:\xamp\xampp\htdocs\applaravel> git add index.php                                                                   PS F:\xamp\xampp\htdocs\applaravel> git commit -m "testGit"                                                             [master (root-commit) e31fb16] testGit
+ 1 file changed, 9 insertions(+)
+ create mode 100644 index.php
+PS F:\xamp\xampp\htdocs\applaravel> git remote add origin https://github.com/hainguyenvan6799/testGit.git               fatal: remote origin already exists.
+PS F:\xamp\xampp\htdocs\applaravel> git push -u origin master                                                           Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/hainguyenvan6799/testGit.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+PS F:\xamp\xampp\htdocs\applaravel>                                                                                                                           
