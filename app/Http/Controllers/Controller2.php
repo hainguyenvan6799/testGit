@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\User;
 
 class Controller2 extends Controller
 {
@@ -79,5 +80,12 @@ class Controller2 extends Controller
     	{
     		return view('pages.forelse');
     	}
+    }
+
+//relationship 1-1
+    public function index(){
+        $data = User::find(1);
+        print_r($data->toArray());
+        return $data->detail;
     }
 }

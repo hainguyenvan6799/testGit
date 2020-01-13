@@ -264,8 +264,77 @@ Route::get('model/sanpham/delete', function(){
 	echo 'delete complete';
 });
 
-//lien kết khóa chính khóa phụ
+//lien kết khóa chính khóa phụ--> chưa ra
 Route::get('lienket', function(){
-	$data = App\sanpham::where('idsanpham',3)->loaisanpham()->toArray();
+	$data = App\sanpham::where('idsanpham','3')->loaisanpham->toArray();
 	var_dump($data);
 });
+
+//tạo table phone
+Route::get('createPhone', function(){
+	Schema::create('Phone', function($table){
+		$table->increments('id');
+		$table->string('phonename');
+	});
+	echo 'Create table Phone successfully';
+});
+
+//Nhập dữ liệu cho Phone
+Route::get('inputforPhone', function(){
+	$data = new App\Phone;
+	$data->phonename = 'Iphone 11';
+	$data->save();
+	echo 'Add complete';
+});
+
+//tạo table user
+Route::get('createUser', function(){
+	Schema::create('User', function($table){
+		$table->increments('id');
+		$table->string('email');
+		$table->string('password');
+	});
+	echo 'Create table User successfully';
+});
+
+//Nhập dữ liệu cho User
+Route::get('inputforUser', function(){
+	$data = new App\User;
+	$data->email='hainguyenvan6799@gmail.com';
+	$data->password='123456';
+	$data->save();
+	echo 'Add complete';
+});
+
+
+
+Route::get('createDetail', function(){
+	Schema::create('Details', function($table){
+			$table->increments('id');
+			$table->integer('user_id')->unsigned();
+			$table->string('detailcontent');
+			$table->foreign('user_id')->references('id')->on('user');
+		});
+		echo 'Create table Detail successfully';
+});
+
+Route::get('relationship', 'Controller2@index');
+
+Route::get('diem', function(){
+	echo 'Bạn đã đủ điểm.';
+})->middleware('myMiddleware')->name('diem'); // myMiddleware giống trong Kernel.php trong mảng $routeMiddleware
+//name('diem') phải trùng với <form action="{{route('diem')}}" method="GET"> trong trang nhapdiem.blade.php trong folder view
+
+Route::get('loi', function(){
+	echo 'Bạn chưa có điểm.';
+})->name('loi'); // vì ở bên trang myMiddleware.php có return redirect()->route('loi');
+
+Route::get('nhapdiem', function(){
+	return view('nhapdiem');
+});
+
+Route::get('dangnhap', function(){
+	return view('auth.login');
+});
+
+Route::post('login', 'AuthController@login')->name('login');

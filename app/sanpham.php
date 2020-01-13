@@ -10,4 +10,5 @@ class sanpham extends Model
     protected $table = "sanphamnew1";
     public $timestamps = false; // tắt chế đọ tự thêm created_at và updated_at
     protected $primaryKey = 'idsanpham';
+    
 }

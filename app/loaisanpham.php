@@ -8,7 +8,8 @@ class loaisanpham extends Model
 {
     //
     protected $table = "typeproducts";
+    public $timestamps = false;
     public function loaisanpham(){
-    	return $this->belongTo('App\loaisanpham','idloaisanpham','idloai');
+    	echo 'Hello function';
     }
 }
